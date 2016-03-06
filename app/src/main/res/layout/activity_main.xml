@@ -87,80 +87,60 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/java" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:text="Java"
-                    android:textSize="40sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/showcase_java_example"
+                <RelativeLayout
+                    style="@style/LanguageHeader"
+                    android:id="@+id/language_0_header"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="110dp"
-                    android:padding="20dp"
-                    android:text="class Main {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println(&quot;Hello, World!&quot;);\n\t}\n}" />
+                    android:layout_height="wrap_content">
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@+id/showcase_java_example"
-                    android:layout_marginRight="20dp"
-                    android:text="Try it" />
+                    <ImageView
+                        style="@style/LanguageLogo"
+                        android:id="@+id/language_0_logo"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/java" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            style="@style/LanguageName"
+                            android:id="@+id/language_0_name"
+                            android:text="Java" />
+
+                        <Button
+                            style="@style/LanguageWikipediaButton"
+                            android:id="@+id/language_0_wikipediaButton"
+                            android:text="Wikipedia"
+                            android:onClick="wikipediaClicked"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    style="@style/LanguageExampleContainer"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/language_0_header">
+
+                    <TextView
+                        style="@style/LanguageExample"
+                        android:layout_weight="1"
+                        android:id="@+id/language_0_example"
+                        android:text="Test test\ntest\naaa\n"/>
+
+                    <Button
+                        style="@style/LanguageTryItButton"
+                        android:id="@+id/language_0_tryItButton"
+                        android:text="Try it"
+                        android:onClick="tryItClicked"/>
+
+                </LinearLayout>
 
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/black"
-                android:layout_margin="10dp"
-                />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/groovy" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:text="Groovy"
-                    android:textSize="40sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/showcase_groovy_example"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="110dp"
-                    android:padding="20dp"
-                    android:text="println &quot;Hello World!&quot;​" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@+id/showcase_groovy_example"
-                    android:layout_marginRight="20dp"
-                    android:text="Try it" />
-
-            </RelativeLayout>
         </LinearLayout>
 
     </ScrollView>
