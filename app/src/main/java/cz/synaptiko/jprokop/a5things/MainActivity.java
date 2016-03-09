@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
                     "  public static void main(String[] args) {\n" +
                     "    System.out.println(\"Hello, World!\");\n" +
                     "  }\n" +
-                    "}\n"
+                    "}"
             ),
             new LanguageDescription(
                     "Python", R.drawable.python,
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     "Javascript", R.drawable.javascript,
                     "https://repl.it/Btps",
                     "https://en.wikipedia.org/wiki/JavaScript",
-                    "console.log(\"Hello, World!\");\n"
+                    "console.log(\"Hello, World!\");"
             ),
             new LanguageDescription(
                     "Go", R.drawable.go,
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     "import \"fmt\"\n\n" +
                     "func main() {\n" +
                     "  fmt.Println(\"Hello, World!\");\n" +
-                    "}\n"
+                    "}"
             ),
             new LanguageDescription(
                     "BrainF***", R.drawable.brainfck,

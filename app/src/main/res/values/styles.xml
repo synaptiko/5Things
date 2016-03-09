@@ -1,48 +1,62 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LanguageList">
+        <item name="android:background">#dfdfdf</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="LanguageContainer">
+        <item name="android:background">@drawable/borders</item>
+        <item name="android:layout_marginBottom">15dp</item>
+    </style>
+
     <style name="LanguageHeader">
-       <item name="android:padding">20dp</item>
+        <item name="android:background">@drawable/bottom_border</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="LanguageLogo">
-        <item name="android:layout_width">150dp</item>
-        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">5dp</item>
         <item name="android:scaleType">centerInside</item>
     </style>
 
     <style name="LanguageName">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">40sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="LanguageExampleContainer">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">20dp</item>
-        <item name="android:background">#dcdcff</item>
+        <item name="android:layout_weight">1</item>
     </style>
 
     <style name="LanguageExample">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:color">@android:color/black</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:background">@drawable/bottom_border</item>
     </style>
 
     <style name="LanguageTryItButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_margin">5dp</item>
     </style>
 
     <style name="LanguageWikipediaButton">

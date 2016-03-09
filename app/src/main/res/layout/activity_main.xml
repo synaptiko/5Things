@@ -11,6 +11,13 @@
         android:layout_height="match_parent">
         <!--android:visibility="gone"-->
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.25"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,15 +86,18 @@
         android:visibility="gone">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            style="@style/LanguageList"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RelativeLayout
+            <LinearLayout
+                style="@style/LanguageContainer"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <RelativeLayout
+                <LinearLayout
                     style="@style/LanguageHeader"
                     android:id="@+id/language_0_header"
                     android:layout_width="match_parent"
@@ -95,54 +105,42 @@
 
                     <ImageView
                         style="@style/LanguageLogo"
-                        android:id="@+id/language_0_logo"
-                        android:layout_alignParentRight="true" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_centerVertical="true">
-
-                        <TextView
-                            style="@style/LanguageName"
-                            android:id="@+id/language_0_name" />
-
-                        <Button
-                            style="@style/LanguageWikipediaButton"
-                            android:id="@+id/language_0_wikipediaButton"
-                            android:text="@string/wikipedia"
-                            android:onClick="wikipediaClicked"/>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    style="@style/LanguageExampleContainer"
-                    android:orientation="horizontal"
-                    android:layout_below="@id/language_0_header">
+                        android:id="@+id/language_0_logo" />
 
                     <TextView
-                        style="@style/LanguageExample"
-                        android:layout_weight="1"
-                        android:id="@+id/language_0_example" />
+                        style="@style/LanguageName"
+                        android:id="@+id/language_0_name" />
 
                     <Button
-                        style="@style/LanguageTryItButton"
-                        android:id="@+id/language_0_tryItButton"
-                        android:text="@string/try_it"
-                        android:onClick="tryItClicked"/>
+                        style="@style/LanguageWikipediaButton"
+                        android:id="@+id/language_0_wikipediaButton"
+                        android:text="@string/wikipedia"
+                        android:onClick="wikipediaClicked"/>
 
                 </LinearLayout>
 
-            </RelativeLayout>
+                <TextView
+                    style="@style/LanguageExample"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/language_0_example" />
 
-            <RelativeLayout
+                <Button
+                    style="@style/LanguageTryItButton"
+                    android:layout_gravity="right"
+                    android:id="@+id/language_0_tryItButton"
+                    android:text="@string/try_it"
+                    android:onClick="tryItClicked"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LanguageContainer"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <RelativeLayout
+                <LinearLayout
                     style="@style/LanguageHeader"
                     android:id="@+id/language_1_header"
                     android:layout_width="match_parent"
@@ -150,54 +148,42 @@
 
                     <ImageView
                         style="@style/LanguageLogo"
-                        android:id="@+id/language_1_logo"
-                        android:layout_alignParentRight="true" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_centerVertical="true">
-
-                        <TextView
-                            style="@style/LanguageName"
-                            android:id="@+id/language_1_name" />
-
-                        <Button
-                            style="@style/LanguageWikipediaButton"
-                            android:id="@+id/language_1_wikipediaButton"
-                            android:text="@string/wikipedia"
-                            android:onClick="wikipediaClicked"/>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    style="@style/LanguageExampleContainer"
-                    android:orientation="horizontal"
-                    android:layout_below="@id/language_1_header">
+                        android:id="@+id/language_1_logo" />
 
                     <TextView
-                        style="@style/LanguageExample"
-                        android:layout_weight="1"
-                        android:id="@+id/language_1_example" />
+                        style="@style/LanguageName"
+                        android:id="@+id/language_1_name" />
 
                     <Button
-                        style="@style/LanguageTryItButton"
-                        android:id="@+id/language_1_tryItButton"
-                        android:text="@string/try_it"
-                        android:onClick="tryItClicked"/>
+                        style="@style/LanguageWikipediaButton"
+                        android:id="@+id/language_1_wikipediaButton"
+                        android:text="@string/wikipedia"
+                        android:onClick="wikipediaClicked"/>
 
                 </LinearLayout>
 
-            </RelativeLayout>
+                <TextView
+                    style="@style/LanguageExample"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/language_1_example" />
 
-            <RelativeLayout
+                <Button
+                    style="@style/LanguageTryItButton"
+                    android:layout_gravity="right"
+                    android:id="@+id/language_1_tryItButton"
+                    android:text="@string/try_it"
+                    android:onClick="tryItClicked"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LanguageContainer"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <RelativeLayout
+                <LinearLayout
                     style="@style/LanguageHeader"
                     android:id="@+id/language_2_header"
                     android:layout_width="match_parent"
@@ -205,54 +191,42 @@
 
                     <ImageView
                         style="@style/LanguageLogo"
-                        android:id="@+id/language_2_logo"
-                        android:layout_alignParentRight="true" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_centerVertical="true">
-
-                        <TextView
-                            style="@style/LanguageName"
-                            android:id="@+id/language_2_name" />
-
-                        <Button
-                            style="@style/LanguageWikipediaButton"
-                            android:id="@+id/language_2_wikipediaButton"
-                            android:text="@string/wikipedia"
-                            android:onClick="wikipediaClicked"/>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    style="@style/LanguageExampleContainer"
-                    android:orientation="horizontal"
-                    android:layout_below="@id/language_2_header">
+                        android:id="@+id/language_2_logo" />
 
                     <TextView
-                        style="@style/LanguageExample"
-                        android:layout_weight="1"
-                        android:id="@+id/language_2_example" />
+                        style="@style/LanguageName"
+                        android:id="@+id/language_2_name" />
 
                     <Button
-                        style="@style/LanguageTryItButton"
-                        android:id="@+id/language_2_tryItButton"
-                        android:text="@string/try_it"
-                        android:onClick="tryItClicked"/>
+                        style="@style/LanguageWikipediaButton"
+                        android:id="@+id/language_2_wikipediaButton"
+                        android:text="@string/wikipedia"
+                        android:onClick="wikipediaClicked"/>
 
                 </LinearLayout>
 
-            </RelativeLayout>
+                <TextView
+                    style="@style/LanguageExample"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/language_2_example" />
 
-            <RelativeLayout
+                <Button
+                    style="@style/LanguageTryItButton"
+                    android:layout_gravity="right"
+                    android:id="@+id/language_2_tryItButton"
+                    android:text="@string/try_it"
+                    android:onClick="tryItClicked"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LanguageContainer"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <RelativeLayout
+                <LinearLayout
                     style="@style/LanguageHeader"
                     android:id="@+id/language_3_header"
                     android:layout_width="match_parent"
@@ -260,54 +234,42 @@
 
                     <ImageView
                         style="@style/LanguageLogo"
-                        android:id="@+id/language_3_logo"
-                        android:layout_alignParentRight="true" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_centerVertical="true">
-
-                        <TextView
-                            style="@style/LanguageName"
-                            android:id="@+id/language_3_name" />
-
-                        <Button
-                            style="@style/LanguageWikipediaButton"
-                            android:id="@+id/language_3_wikipediaButton"
-                            android:text="@string/wikipedia"
-                            android:onClick="wikipediaClicked"/>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    style="@style/LanguageExampleContainer"
-                    android:orientation="horizontal"
-                    android:layout_below="@id/language_3_header">
+                        android:id="@+id/language_3_logo" />
 
                     <TextView
-                        style="@style/LanguageExample"
-                        android:layout_weight="1"
-                        android:id="@+id/language_3_example" />
+                        style="@style/LanguageName"
+                        android:id="@+id/language_3_name" />
 
                     <Button
-                        style="@style/LanguageTryItButton"
-                        android:id="@+id/language_3_tryItButton"
-                        android:text="@string/try_it"
-                        android:onClick="tryItClicked"/>
+                        style="@style/LanguageWikipediaButton"
+                        android:id="@+id/language_3_wikipediaButton"
+                        android:text="@string/wikipedia"
+                        android:onClick="wikipediaClicked"/>
 
                 </LinearLayout>
 
-            </RelativeLayout>
+                <TextView
+                    style="@style/LanguageExample"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/language_3_example" />
 
-            <RelativeLayout
+                <Button
+                    style="@style/LanguageTryItButton"
+                    android:layout_gravity="right"
+                    android:id="@+id/language_3_tryItButton"
+                    android:text="@string/try_it"
+                    android:onClick="tryItClicked"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LanguageContainer"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <RelativeLayout
+                <LinearLayout
                     style="@style/LanguageHeader"
                     android:id="@+id/language_4_header"
                     android:layout_width="match_parent"
@@ -315,48 +277,34 @@
 
                     <ImageView
                         style="@style/LanguageLogo"
-                        android:id="@+id/language_4_logo"
-                        android:layout_alignParentRight="true" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_centerVertical="true">
-
-                        <TextView
-                            style="@style/LanguageName"
-                            android:id="@+id/language_4_name" />
-
-                        <Button
-                            style="@style/LanguageWikipediaButton"
-                            android:id="@+id/language_4_wikipediaButton"
-                            android:text="@string/wikipedia"
-                            android:onClick="wikipediaClicked"/>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    style="@style/LanguageExampleContainer"
-                    android:orientation="horizontal"
-                    android:layout_below="@id/language_4_header">
+                        android:id="@+id/language_4_logo" />
 
                     <TextView
-                        style="@style/LanguageExample"
-                        android:layout_weight="1"
-                        android:id="@+id/language_4_example" />
+                        style="@style/LanguageName"
+                        android:id="@+id/language_4_name" />
 
                     <Button
-                        style="@style/LanguageTryItButton"
-                        android:id="@+id/language_4_tryItButton"
-                        android:text="@string/try_it"
-                        android:onClick="tryItClicked"/>
+                        style="@style/LanguageWikipediaButton"
+                        android:id="@+id/language_4_wikipediaButton"
+                        android:text="@string/wikipedia"
+                        android:onClick="wikipediaClicked"/>
 
                 </LinearLayout>
 
-            </RelativeLayout>
+                <TextView
+                    style="@style/LanguageExample"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/language_4_example" />
+
+                <Button
+                    style="@style/LanguageTryItButton"
+                    android:layout_gravity="right"
+                    android:id="@+id/language_4_tryItButton"
+                    android:text="@string/try_it"
+                    android:onClick="tryItClicked"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
