@@ -72,10 +72,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_above="@+id/justShowButton"
+            android:text="Take a quiz"
+            android:onClick="onTakeAQuizClicked"/>
+
+        <Button
+            android:id="@+id/justShowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="30dp"
-            android:text="Show me!"
-            android:onClick="showMeClicked"/>
+            android:text="Just show"
+            android:onClick="onJustShowClicked"/>
 
     </RelativeLayout>
 
@@ -115,14 +124,13 @@
                         style="@style/LanguageWikipediaButton"
                         android:id="@+id/language_0_wikipediaButton"
                         android:text="@string/wikipedia"
-                        android:onClick="wikipediaClicked"/>
+                        android:onClick="onWikipediaClicked"/>
 
                 </LinearLayout>
 
                 <TextView
                     style="@style/LanguageExample"
                     android:layout_width="match_parent"
-                    android:layout_weight="1"
                     android:id="@+id/language_0_example" />
 
                 <Button
@@ -130,7 +138,7 @@
                     android:layout_gravity="right"
                     android:id="@+id/language_0_tryItButton"
                     android:text="@string/try_it"
-                    android:onClick="tryItClicked"/>
+                    android:onClick="onTryItClicked"/>
 
             </LinearLayout>
 
@@ -158,14 +166,13 @@
                         style="@style/LanguageWikipediaButton"
                         android:id="@+id/language_1_wikipediaButton"
                         android:text="@string/wikipedia"
-                        android:onClick="wikipediaClicked"/>
+                        android:onClick="onWikipediaClicked"/>
 
                 </LinearLayout>
 
                 <TextView
                     style="@style/LanguageExample"
                     android:layout_width="match_parent"
-                    android:layout_weight="1"
                     android:id="@+id/language_1_example" />
 
                 <Button
@@ -173,7 +180,7 @@
                     android:layout_gravity="right"
                     android:id="@+id/language_1_tryItButton"
                     android:text="@string/try_it"
-                    android:onClick="tryItClicked"/>
+                    android:onClick="onTryItClicked"/>
 
             </LinearLayout>
 
@@ -201,14 +208,13 @@
                         style="@style/LanguageWikipediaButton"
                         android:id="@+id/language_2_wikipediaButton"
                         android:text="@string/wikipedia"
-                        android:onClick="wikipediaClicked"/>
+                        android:onClick="onWikipediaClicked"/>
 
                 </LinearLayout>
 
                 <TextView
                     style="@style/LanguageExample"
                     android:layout_width="match_parent"
-                    android:layout_weight="1"
                     android:id="@+id/language_2_example" />
 
                 <Button
@@ -216,7 +222,7 @@
                     android:layout_gravity="right"
                     android:id="@+id/language_2_tryItButton"
                     android:text="@string/try_it"
-                    android:onClick="tryItClicked"/>
+                    android:onClick="onTryItClicked"/>
 
             </LinearLayout>
 
@@ -244,14 +250,13 @@
                         style="@style/LanguageWikipediaButton"
                         android:id="@+id/language_3_wikipediaButton"
                         android:text="@string/wikipedia"
-                        android:onClick="wikipediaClicked"/>
+                        android:onClick="onWikipediaClicked"/>
 
                 </LinearLayout>
 
                 <TextView
                     style="@style/LanguageExample"
                     android:layout_width="match_parent"
-                    android:layout_weight="1"
                     android:id="@+id/language_3_example" />
 
                 <Button
@@ -259,7 +264,7 @@
                     android:layout_gravity="right"
                     android:id="@+id/language_3_tryItButton"
                     android:text="@string/try_it"
-                    android:onClick="tryItClicked"/>
+                    android:onClick="onTryItClicked"/>
 
             </LinearLayout>
 
@@ -287,14 +292,13 @@
                         style="@style/LanguageWikipediaButton"
                         android:id="@+id/language_4_wikipediaButton"
                         android:text="@string/wikipedia"
-                        android:onClick="wikipediaClicked"/>
+                        android:onClick="onWikipediaClicked"/>
 
                 </LinearLayout>
 
                 <TextView
                     style="@style/LanguageExample"
                     android:layout_width="match_parent"
-                    android:layout_weight="1"
                     android:id="@+id/language_4_example" />
 
                 <Button
@@ -302,12 +306,86 @@
                     android:layout_gravity="right"
                     android:id="@+id/language_4_tryItButton"
                     android:text="@string/try_it"
-                    android:onClick="tryItClicked"/>
+                    android:onClick="onTryItClicked"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/quiz"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            style="@style/LanguageList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/LanguageContainer"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <LinearLayout
+                    style="@style/LanguageHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:layout_margin="5dp"
+                        android:text="In which language is written the example below?" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/LanguageExample"
+                    android:layout_width="match_parent"
+                    android:id="@+id/quiz_example" />
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/quiz_answer_a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onQuizAnswerClicked"/>
+
+                    <Button
+                        android:id="@+id/quiz_answer_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onQuizAnswerClicked"/>
+
+                    <Button
+                        android:id="@+id/quiz_answer_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onQuizAnswerClicked"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
