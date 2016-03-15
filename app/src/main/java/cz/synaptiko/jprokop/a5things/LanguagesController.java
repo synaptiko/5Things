@@ -11,11 +11,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
 /**
- * Created by jprokop on 3/11/16.
+ * Class with business logic related to:
+ * - filling the layout with data
+ * - generating of a quiz
+ * - checking of right answer
  */
 public class LanguagesController {
 
+    /**
+     * Data of all languages in this app
+     */
     private LanguageDescription[] mLanguageDescriptions = new LanguageDescription[]{
             new LanguageDescription(
                     "Java", R.drawable.java,
@@ -58,6 +69,9 @@ public class LanguagesController {
             )
     };
 
+    /**
+     * "Try it" button ids for easier "search by" index
+     */
     private int[] mTryItButtonIds = new int[]{
             R.id.language_0_tryItButton,
             R.id.language_1_tryItButton,
@@ -66,6 +80,9 @@ public class LanguagesController {
             R.id.language_4_tryItButton
     };
 
+    /**
+     * "Wikipedia" button ids for easier "search by" index
+     */
     private int[] mWikipediaButtonIds = new int[]{
             R.id.language_0_wikipediaButton,
             R.id.language_1_wikipediaButton,
@@ -81,7 +98,12 @@ public class LanguagesController {
     private Context mContext;
 
     private boolean mIsShowcasePrepared = false;
+    private int mQuizRightAnswerId;
 
+    /**
+     * Construct the controller
+     * @param activity Reference to an activity which will be used for filling with data
+     */
     public LanguagesController(AppCompatActivity activity) {
         mActivity = activity;
         mWindow = activity.getWindow();
@@ -90,25 +112,55 @@ public class LanguagesController {
         mContext = activity.getApplicationContext();
     }
 
+    /**
+     * Evaluates quiz answer, in case answer is right it will generate new quiz question.
+     * @param id Id of pressed button
+     */
     public void evaluateQuizAnswer(int id) {
-        //Toast toast = Toast.makeText(mContext, "Sorry, that's wrong answer.\nTry again.", Toast.LENGTH_LONG);
-        Toast toast = Toast.makeText(mContext, "Yep! That's right! Next one…", Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(mContext, (id == mQuizRightAnswerId
+                ? R.string.successful_guess
+                : R.string.unsuccessful_guess
+        ), Toast.LENGTH_SHORT);
         toast.show();
+
+        if (id == mQuizRightAnswerId) {
+            generateQuizQuestion();
+        }
     }
 
+    /**
+     * Generates new quiz question randomly
+     */
     public void generateQuizQuestion() {
         TextView exampleTextView = (TextView) mWindow.findViewById(R.id.quiz_example);
-        Button[] answers = new Button[] {
+        Button[] answerButtons = new Button[] {
             (Button) mWindow.findViewById(R.id.quiz_answer_a),
             (Button) mWindow.findViewById(R.id.quiz_answer_b),
             (Button) mWindow.findViewById(R.id.quiz_answer_c)
         };
-        exampleTextView.setText(mLanguageDescriptions[0].getExampleCode());
-        answers[0].setText(mLanguageDescriptions[0].getName());
-        answers[1].setText(mLanguageDescriptions[1].getName());
-        answers[2].setText(mLanguageDescriptions[2].getName());
+        // lists all answers (as indexes)
+        List<Integer> answers = Arrays.asList(0, 1, 2, 3, 4);
+        int rightAnswer;
+        int answerToButtonIndex = 0;
+        Random random = new Random();
+
+        // shuffle all answers
+        Collections.shuffle(answers, random);
+        // choose right answer from the first three answers
+        rightAnswer = random.nextInt(3);
+
+        // fill buttons with answers
+        exampleTextView.setText(mLanguageDescriptions[answers.get(rightAnswer)].getExampleCode());
+        for (Button answerButton : answerButtons) {
+            answerButton.setText(mLanguageDescriptions[answers.get(answerToButtonIndex)].getName());
+            answerToButtonIndex += 1;
+        }
+        mQuizRightAnswerId = answerButtons[rightAnswer].getId();
     }
 
+    /**
+     * Prepares list of all languages with examples
+     */
     public void prepareShowcase() {
         if (!this.mIsShowcasePrepared) {
             this.mIsShowcasePrepared = true;
@@ -133,6 +185,10 @@ public class LanguagesController {
         }
     }
 
+    /**
+     * Open "Try it" url of the language
+     * @param id Id of "Try it" button
+     */
     public void invokeTryItAction(int id) {
         int index = findIndexById(mTryItButtonIds, id);
         if (index >= 0) {
@@ -140,6 +196,10 @@ public class LanguagesController {
         }
     }
 
+    /**
+     * Open "Wikipedia" url of the language
+     * @param id Id of "Wikipedia" button
+     */
     public void invokeWikipediaAction(int id) {
         int index = findIndexById(mWikipediaButtonIds, id);
         if (index >= 0) {

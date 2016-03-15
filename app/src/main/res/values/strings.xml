@@ -2,4 +2,14 @@
     <string name="app_name">5 Things</string>
     <string name="try_it">Try it</string>
     <string name="wikipedia">Wikipedia</string>
+    <string name="successful_guess">Yep! That\'s right! Next one…</string>
+    <string name="unsuccessful_guess">Sorry, that\'s wrong answer. Try again.</string>
+    <string name="intro_5">5</string>
+    <string name="intro_ways">ways</string>
+    <string name="intro_to_say">to say</string>
+    <string name="intro_hello">Hello,</string>
+    <string name="intro_world">World!</string>
+    <string name="take_a_quiz">Take a quiz</string>
+    <string name="just_show">Just show</string>
+    <string name="quiz_question">In which language is written the example below?</string>
 </resources>
